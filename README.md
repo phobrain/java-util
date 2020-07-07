@@ -30,16 +30,48 @@ https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8243422
 
 === Step 1: gen input data: 8K id's (N*(N-1))/2 lines of pairs across 150 file
 
-$ java <...> gen 8000 150
-Writing 31996000 lines to 150 files
-done: 100%  expect: Mon Apr 20 20:23:03 PDT 2020                       
-Printed 150 files w/ 8000 ids
+    $ java <...> gen 8000 150
+    Writing 31996000 lines to 150 files
+    done: 100%  expect: Mon Apr 20 20:23:03 PDT 2020                       
+    Printed 150 files w/ 8000 ids
         in input_8000_ids_150_files/ id list: input_8000_ids_150_files/idlist
 
-real    88m45.102s
-user    27m48.520s
-sys     60m21.579s
+    real    88m45.102s
+    user    27m48.520s
+    sys     60m21.579s
 
 === Step 2: run test
 
-$ java <...> ./input_8000_ids_150_files
+    $ java <...> ./input_8000_ids_150_files
+
+Success:
+
+    Ids from input_8000_ids_150_files/idlist: 8000
+    avg dirs: [input_8000_ids_150_files]
+    PairFilesReader: read threads: 5
+    PairFileAggregator: 'testAvg' pos:  dirlist size 1
+    Aggregator: add val12, val21:  dirs 1
+    PairFilesReader: init with 150 files 5 reader threads  at Mon Apr 20 23:11:51 PDT 2020
+    Ids: 8000 Pairs: 31996000
+    done: 99%  expect: Mon Apr 20 23:17:07 PDT 2020                       PairFilesReader reader 4 internally done reading at line 31996001 Q size is 474
+    PairFilesReader reader 2 internally done reading at line 31996001 Q size is 424
+    PairFilesReader reader 1 internally done reading at line 31996001 Q size is 473
+    PairFilesReader reader 0 internally done reading at line 31996001 Q size is 467
+    PairFilesReader reader 3 internally done reading at line 31996001 Q size is 0
+    done: 100%  expect: Mon Apr 20 23:17:07 PDT 2020                       PairFilesReader: check if done on pvQs:  0 1 2 3 4 done
+    PairFilesReader.done(): read 190 GB in 5 min rate 617 MB/sec using 5 readers
+    DONE
+    
+Failure:
+
+    ...
+    Ids: 8000 Pairs: 31996000
+    done: 55%  expect: Mon Jul 06 17:59:28 PDT 2020                       Mon Jul 06 17:56:41 PDT 2020 - Error: PairFilesReader: reader 4: id0
+    ~/input_8000_ids_150_files/143.pairs: File 147: mismatch: line 17600158
+    expected: [2633:2633 6452:6452]
+    Got:      [263322633 6452:6452]
+    Actual line: [263322633 6452:6452 3.5200315E7 3.5200316E7]
+
+    real	3m23.828s
+    user	16m51.595s
+    sys 	1m49.870s
