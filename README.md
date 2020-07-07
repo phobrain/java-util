@@ -26,7 +26,7 @@ Seen on 3 JDK's. Oracle bug here:
 
 https://bugs.java.com/bugdatabase/view_bug.do?bug_id=JDK-8243422
 
-=== Step 0: compile as you will, I can't get my gradle structure into github yet.
+=== Step 0: compile as you will, I can't get my gradle structure into github yet. See jbug.tgz for a gradle-compilable version.
 
 === Step 1: gen input data: 8K id's (N*(N-1))/2 lines of pairs across 150 file
 
