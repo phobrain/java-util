@@ -14,7 +14,7 @@ Target structure:
 
 ======== Notes for TestPairsReader.java
 
-This program replicates on-disk, opened-readonly data corruption, with multiple files being read synchronously a line at once by multiple reader threads which queue their results.
+This program replicates on-disk, opened-readonly data corruption, seen using 3 JVM's on only 1 of 3 machines tested: multiple files being read synchronously a line at a time by multiple reader threads which queue their results.
 
     Read via: BufferedReader
 
