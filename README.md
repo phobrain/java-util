@@ -1,6 +1,17 @@
 # java-util
 Java library and utilities for photo analysis and preparation for Phobrain 
 
+Target structure:
+
+    build.gradle
+    shared/
+    shared/build.gradle
+    shared/src/main/java/com/priot/util/...
+    testpfr/
+    testpfr/build.gradle
+    testpfr/src/main/java/com/priot/testpfr/TestPairsReader.java
+
+
 ======== Notes for TestPairsReader.java
 
 This program replicates on-disk, opened-readonly data corruption, with multiple files being read synchronously a line at once by multiple reader threads which queue their results.
