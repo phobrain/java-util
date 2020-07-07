@@ -62,6 +62,10 @@ Success:
     PairFilesReader.done(): read 190 GB in 5 min rate 617 MB/sec using 5 readers
     DONE
     
+    real	5m16.916s
+    user	28m0.535s
+    sys	    2m18.415s
+    
 Failure:
 
     ...
