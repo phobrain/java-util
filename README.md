@@ -64,7 +64,7 @@ Success:
     
     real	5m16.916s
     user	28m0.535s
-    sys	    2m18.415s
+    sys	   2m18.415s
     
 Failure:
 
