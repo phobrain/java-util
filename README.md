@@ -76,7 +76,7 @@ Failure:
     user	16m51.595s
     sys 	1m49.870s
     
-The change of ':' -> '2' (octal 072->062) is a fairly-common pattern, but not the only one seen. Another example.
+The change of ':' -> '2' (octal 072->062) is a fairly-common pattern, but not the only one seen. Another example, '8' -> '0', octal 070->060:
 
     expected: [3077:3077 6528:6528]
     Got:      [3077:3077 6520:6528]
