@@ -75,3 +75,11 @@ Failure:
     real	3m23.828s
     user	16m51.595s
     sys 	1m49.870s
+    
+The change of ':' -> '2' (octal 072->062) is a fairly-common pattern, but not the only one seen. Another example.
+
+    expected: [3077:3077 6528:6528]
+    Got:      [3077:3077 6520:6528]
+    Actual line: [3077:3077 6520:6528 3.9767895E7 3.9767896E7]
+    
+The memory isn't ECC, but has passed extensive tests, repeated with the two dimms swapped.
